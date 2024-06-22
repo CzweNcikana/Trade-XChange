@@ -18,12 +18,6 @@ public class XChangeController {
 
     private final XChangeService xChangeService;
 
-//    @PostMapping("/exchange-rate")
-//    public ResponseEntity<XChangeEntity> addRate(@RequestBody XChangeRateDTO xChangeRateDTO) {
-//        XChangeEntity entity = xChangeService.storeRates(xChangeRateDTO);
-//        return new ResponseEntity<>(entity, HttpStatus.CREATED);
-//    }
-
     @GetMapping("/exchange-rate")
     public ResponseEntity<String> getExchangeRate(@RequestParam String fromSymbol, @RequestParam String toSymbol) {
         xChangeService.processData(fromSymbol, toSymbol);

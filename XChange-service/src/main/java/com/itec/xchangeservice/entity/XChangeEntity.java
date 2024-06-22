@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 
 public class XChangeEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false, precision = 0)
     private Long id;
 
