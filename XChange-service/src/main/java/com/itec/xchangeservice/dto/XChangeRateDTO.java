@@ -1,5 +1,6 @@
 package com.itec.xchangeservice.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
@@ -12,18 +13,14 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 
-public class ExchangeRateDTO {
+public class XChangeRateDTO {
 
     @NotBlank(message = "Base currency cannot be blank")
+    @Schema(description = "Base currency", example = "USD")
     private String baseCurrency;
 
     @NotBlank(message = "Target currency cannot be blank")
+    @Schema(description = "Target currency", example = "EUR")
     private String targetCurrency;
-
-    @NotBlank(message = "Exchange rate cannot be blank")
-    private String exchangeRate;
-
-    @NotBlank(message = "Date cannot be blank")
-    private LocalDateTime timestamp;
 
 }
